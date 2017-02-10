@@ -1,0 +1,6 @@
+socket:client_talk.c server_talk.c
+	gcc server_talk.c -o server
+	gcc client_talk.c -o client
+
+clean:
+	rm -rf server client
