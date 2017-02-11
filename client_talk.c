@@ -58,7 +58,7 @@ int main(INPUT){
 					perror("resv");		
 					return -1;
 				}else if(ret==0){
-					printf("byebye");
+					printf("byebye\n");
 					break;
 				}
 				printf("%s\n",buf);
