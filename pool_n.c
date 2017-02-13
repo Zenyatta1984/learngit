@@ -1,4 +1,4 @@
-#include "pfunc.h"
+#include "normal.h"
 
 void send_n(int fd,char* buf,int len){
 	int total=0;

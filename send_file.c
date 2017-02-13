@@ -1,4 +1,4 @@
-#include "pfunc.h"
+#include "normal.h"
 
 void send_file(int new_fd){
 	td t;
