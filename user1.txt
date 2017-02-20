@@ -1,0 +1,47 @@
+M:one more client linked:user1
+M:have already find a spare process
+M:sending message to it
+user1 login time:	Sun Feb 19 22:36:00 2017
+
+C:child process is handling new_fd=5
+encode len=34
+salt len=11
+-----------------
+Client trying to login:>>>ziboris
+Time is Sun Feb 19 22:36:02 2017
+
+client encode len=34
+client:ls
+len=2
+M:one more client linked:user1
+M:have already find a spare process
+M:sending message to it
+user1 login time:	Sun Feb 19 22:36:27 2017
+
+C:child process is handling new_fd=6
+encode len=34
+salt len=11
+-----------------
+Client trying to login:>>>ziboris
+Time is Sun Feb 19 22:36:30 2017
+
+client encode len=34
+M:one more client linked:user1
+M:have already find a spare process
+M:sending message to it
+user1 login time:	Sun Feb 19 22:36:38 2017
+
+C:child process is handling new_fd=7
+encode len=34
+salt len=11
+-----------------
+Client trying to login:>>>ziboris
+Time is Sun Feb 19 22:36:40 2017
+
+client encode len=34
+login filed,reinput the password!
+client encode len=34
+client:ls
+len=2
+client:gets The_Holy_Bible.txt
+len=23
