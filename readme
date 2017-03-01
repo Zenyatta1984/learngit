@@ -1,5 +1,3 @@
-singleton.cc 没有明确创建对象的单例模式
-singleton2.cc 没有明确调用destroy的自动回收:a采用内部类的方式
-singleton3.cc （多线程环境）b采用atexit
-singleton4.cc （多线程环境）c采用pthread_once + atexit只针对linux版本
+gcc g++ --version>5
+没有copy on write
 
