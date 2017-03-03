@@ -1,9 +1,30 @@
- 
-#include <iostream>
 #include <vector>
 #include <list>
-#include <deque>
+#include <iterator>
+#include <algorithm>
+#include <iostream>
 
-using namespace std;
+using std::cout;
+using std::endl;
+using std::vector;
+using std::list;
 
-void disp(vector
+template<typename container>
+void printcontainer(contain &con)
+{
+	typename container::iterator it;
+	for(it=con.begin();it!=end();++it){
+		cout<<*it<<" ";
+	}
+	cout<<endl;
+}
+
+int main(void){
+	vector<int> myvec={1,2,3};
+
+	list<int> mylist;
+
+
+
+
+
