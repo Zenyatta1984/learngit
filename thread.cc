@@ -1,4 +1,4 @@
-
+ ///
  /// @file    thread.cc
  /// @date    2017-03-14 20:35:44
  ///
@@ -11,9 +11,10 @@ using std::endl;
 
 namespace hello{
 
-thread::thread()
+thread::thread(threadcallback cb)
 :_pthid(0)
 ,_isrunning(false)
+,_cb(cb)
 {}
 
 void thread::start(){
@@ -31,14 +32,16 @@ void thread::join(){
 void* thread::threadfunc(void *arg){
 	thread * p=static_cast<thread*>(arg);
 	if(p)
-		p->run();
+		p->_cb();
 	return NULL;
 }
 
 thread::~thread(){
 	if(_isrunning){
 		pthread_detach(_pthid);
+		_isrunning=false;
 	}
+
 }
 
 

@@ -1,34 +1,38 @@
  ///
  /// @file    testthread.cc
- /// @date    2017-03-15 10:52:32
+ /// @date    2017-03-14 20:45:34
  ///
 
 
-#include "buffer.h"
-#include "producer.h"
-#include "consumer.h"
+#include "thread.h"
 
 #include <unistd.h>
 #include <stdlib.h>
 #include <time.h>
-
 #include <iostream>
-#include <memory>
 
 using std::cout;
 using std::endl;
-using std::unique_ptr;
+
+class producer
+{
+public:
+	 void func(){
+		int cnt=20;
+		srand(time(NULL));
+		while(cnt--){
+			int number=rand()%100;
+			cout<<"number="<<number<<endl;
+			sleep(1);
+		}
+	}
+};
 
 int main(void){
-	hello::buffer buffer(10);
-	hello::producer mypro(buffer);
-	hello::consumer mycon(buffer);
 
-	mypro.start();
-	mycon.start();
-
-	mypro.join();
-	mycon.join();
+	hello::thread thread(std::bind(&producer::func,producer()));
+	thread.start();
+	thread.join();
 
 	return 0;
 }
