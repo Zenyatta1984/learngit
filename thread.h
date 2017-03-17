@@ -8,19 +8,17 @@
 
 #include "nocopyable.h"
 #include <pthread.h>
-#include <functional>
-
-using std::function;
 
 namespace hello{
 
 class thread
 :private nocopyable
 {
-	typedef function<void()> threadcallback;
 public:
-	thread(threadcallback cb);
-	~thread();
+	thread();
+	virtual ~thread();
+
+	virtual void run()=0;
 
 	void start();
 	void join();
@@ -30,7 +28,6 @@ public:
 private:
 	pthread_t _pthid;
 	bool _isrunning;
-	threadcallback _cb;
 };
 
 }
